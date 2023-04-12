@@ -20,7 +20,7 @@
  */
 function concatenateStrings(value1, value2) {
   // return value1 + value2;
-  return `${value1}${value2}`;
+  return `${value1}${value2}`; // Конкатенация
 }
 
 
@@ -36,7 +36,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
-  return value.length;
+  return value.length; // свойство return  возвращает длину value  с помощью length
 }
 
 /**
@@ -53,7 +53,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return `Hello, ${firstName} ${lastName}!`;
+  return `Hello, ${firstName} ${lastName}!`; // Конкатенация
 }
 getStringFromTemplate('John', 'Doe');
 
@@ -69,7 +69,7 @@ getStringFromTemplate('John', 'Doe');
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.slice(7, -1); // 7 начало первого сивола и -1 последний символ
+  return value.slice(7, -1); // С помощью метода slice мы обрезаем 7 первых символов и -1 с конца.
 }
 extractNameFromTemplate('Hello, John Doe!');
 
@@ -85,7 +85,7 @@ extractNameFromTemplate('Hello, John Doe!');
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-  return value.slice(0, 1);
+  return value[0]; // С помощью индекса мы возвращаем первый символ строки
 }
 getFirstChar('John Doe');
 
@@ -102,7 +102,7 @@ getFirstChar('John Doe');
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-  return value.trim();
+  return value.trim(); // Метод trim удаляет все лишние пробелы
 }
 removeLeadingAndTrailingWhitespaces('   Abracadabra');
 
@@ -118,9 +118,9 @@ removeLeadingAndTrailingWhitespaces('   Abracadabra');
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  return value.repeat(count);
+  return value.repeat(count); // Метод repeat мы передаём аргумент в виде числа и он нам возвращает
 }
-repeatString('V', 8);
+repeatString('V', 8);// value повторяет столько раз сколько указали
 
 
 /**
@@ -135,9 +135,10 @@ repeatString('V', 8);
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, ''); // Мы возврощаем строку, к которой применяем метод replace который удаляет и заменяет на пустую строчку
 }
+removeFirstOccurrences('To be or not to be', 'not');// в него передаём аргументы, 1 аргумент value, 2 аргумент пустая строка.
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -150,10 +151,10 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.slice(1, -1); // С помощью slice вырезхали первый и последний символ
 }
-
+unbracketTag('Matvei');
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -165,9 +166,11 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(str) {
+  return str.toUpperCase(); // метод toUpperCase преобразует символы в верхний регистр
 }
+
+convertToUpperCase('Transilvania');
 
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
@@ -184,9 +187,10 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';'); // С помощью split мы установили границу разделения, разюивает строку на массив строк
 }
+extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
 
 /**
  * Returns the string representation of rectangle with specified width and height
@@ -232,10 +236,13 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+for (int i=0; i<str.length; i++) {
+  return str(i + ' % 13 == ', i % 26);
+  }
 }
-
+encodeToRot13(abc);
 /**
  * Returns true if the value is string; otherwise false.
  * @param {string} value
