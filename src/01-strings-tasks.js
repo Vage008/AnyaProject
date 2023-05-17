@@ -104,7 +104,7 @@ getFirstChar('John Doe');
 function removeLeadingAndTrailingWhitespaces(value) {
   return value.trim(); // Метод trim удаляет все лишние пробелы
 }
-removeLeadingAndTrailingWhitespaces('   Abracadabra');
+removeLeadingAndTrailingWhitespaces('Abracadabra');
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -236,55 +236,57 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
+
+
 function encodeToRot13(str) {
-const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-for (int i=0; i<str.length; i++) {
-  return str(i + ' % 13 == ', i % 26);
-  }
-}
-encodeToRot13(abc);
-/**
- * Returns true if the value is string; otherwise false.
- * @param {string} value
- * @return {boolean}
- *
- * @example
- *   isString() => false
- *   isString(null) => false
- *   isString([]) => false
- *   isString({}) => false
- *   isString('test') => true
- *   isString(new String('test')) => true
- */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+  const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const cba = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  return str.replace(/[a-z]/gi, (c) => cba[abc.indexOf(c)]);
 }
 
 
 /**
- * Returns playid card id.
- *
- * Playing cards inittial deck inclides the cards in the following order:
- *
- *  'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
- *  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
- *  'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
- *  'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
- *
- * (see https://en.wikipedia.org/wiki/Standard_52-card_deck)
- * Function returns the zero-based index of specified card in the initial deck above.
- *
- * @param {string} value
- * @return {number}
- *
- * @example
- *   'A♣' => 0
- *   '2♣' => 1
- *   '3♣' => 2
- *     ...
- *   'Q♠' => 50
- *   'K♠' => 51
- */
+   * Returns true if the value is string; otherwise false.
+   * @param {string} value
+   * @return {boolean}
+   *
+   * @example
+   *   isString() => false
+   *   isString(null) => false
+   *   isString([]) => false
+   *   isString({}) => false
+   *   isString('test') => true
+   *   isString(new String('test')) => true
+   */
+function isString(value) {
+  return typeof value === 'string';
+}
+
+
+/**
+   * Returns playid card id.
+   *
+   * Playing cards inittial deck inclides the cards in the following order:
+   *
+   *  'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+   *  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+   *  'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+   *  'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
+   *
+   * (see https://en.wikipedia.org/wiki/Standard_52-card_deck)
+   * Function returns the zero-based index of specified card in the initial deck above.
+   *
+   * @param {string} value
+   * @return {number}
+   *
+   * @example
+   *   'A♣' => 0
+   *   '2♣' => 1
+   *   '3♣' => 2
+   *     ...
+   *   'Q♠' => 50
+   *   'K♠' => 51
+   */
 function getCardId(/* value */) {
   throw new Error('Not implemented');
 }
