@@ -19,9 +19,11 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(width, height) {
+  const calcSum = width * height;
+  return calcSum;
 }
+getRectangleArea(5, 10);
 
 
 /**
@@ -35,9 +37,11 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(radius) {
+  const diametr = radius * Math.PI;
+  return diametr;
 }
+getCircleCircumference(10);
 
 /**
  * Returns an average of two given numbers.

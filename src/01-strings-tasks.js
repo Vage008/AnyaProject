@@ -108,7 +108,6 @@ removeLeadingAndTrailingWhitespaces('Abracadabra');
 
 /**
  * Returns a string that repeated the specified number of times.
- *
  * @param {string} value
  * @param {string} count
  * @return {string}
@@ -152,7 +151,7 @@ removeFirstOccurrences('To be or not to be', 'not');// в него переда�
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.slice(1, -1); // С помощью slice вырезхали первый и последний символ
+  return str.slice(1, -1); // С помощью slice вырезали первый и последний символ
 }
 unbracketTag('Matvei');
 
@@ -188,7 +187,7 @@ convertToUpperCase('Transilvania');
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
-  return str.split(';'); // С помощью split мы установили границу разделения, разюивает строку на массив строк
+  return str.split(';'); // С помощью split мы установили границу разделения, разбивает строку на массив строк
 }
 extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com');
 
